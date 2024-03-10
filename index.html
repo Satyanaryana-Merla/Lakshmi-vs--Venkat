@@ -170,15 +170,31 @@
 	
 			<div class="container animate-box" style="max-width: 70%; margin: 0 auto;">
 				<div class="fh5co-video fh5co-bg" style="position: relative; text-align: center;">
-					<video id="highlightVideo" controls autoplay loop muted style="width: 100%;" onclick="toggleMute()">
+					<video id="highlightVideo" controls autoplay loop muted style="max-width: 100%; height: auto;" onclick="toggleMute()">
 						<source src="vedios/wedding.mp4" type="video/mp4">
-					
+						Your browser does not support the video tag.
 					</video>
-					<div class="overlay"></div>
+					<div class="auto"></div>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	<script>
+		function toggleMute() {
+			var video = document.getElementById("highlightVideo");
+			video.muted = !video.muted;
+		}
+	</script>
+	
+	<style>
+		@media only screen and (max-width: 768px) {
+			#highlightVideo {
+				height: auto; /* Resetting height for mobile devices */
+			}
+		}
+	</style>
+	
 	
 	<script>
 		function toggleMute() {
